@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADDN — Store</title>
+    <meta name="description" content="ADDN is a curated luxury online store offering premium watches, apparel, electronics, and lifestyle products.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+
+        <!-- Brand -->
+        <a href="#" class="nav-brand" onclick="showPage('home'); return false;" aria-label="ADDN Store Home">
+            <span class="brand-name">ADDN</span>
+            <span class="brand-tagline">Luxury Redefined</span>
+        </a>
+
+        <!-- Links -->
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#" data-page="home"    onclick="showPage('home');    return false;" class="active">Home</a></li>
+            <li><a href="#" data-page="shop"    onclick="showPage('shop');    return false;">Shop</a></li>
+            <li><a href="#" data-page="about"   onclick="showPage('about');   return false;">About</a></li>
+            <li><a href="#" data-page="contact" onclick="showPage('contact'); return false;">Contact</a></li>
+        </ul>
+
+        <!-- Search + Actions -->
+        <div class="nav-actions">
+            <div class="nav-search-bar" role="search">
+                <i class="fas fa-search" aria-hidden="true"></i>
+                <input type="search" id="navSearchInput" placeholder="Search products…" aria-label="Search products">
+            </div>
+
+            <button class="nav-icon-btn" id="wishlistBtn" aria-label="Open wishlist" aria-expanded="false">
+                <i class="fas fa-heart"></i>
+                <span class="badge" id="wishlistBadge" style="display:none">0</span>
+            </button>
+
+            <button class="nav-icon-btn" id="cartBtn" aria-label="Open cart" aria-expanded="false">
+                <i class="fas fa-bag-shopping"></i>
+                <span class="badge" id="cartCount" style="display:none">0</span>
+            </button>
+
+            <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+
+    </div>
+</nav>
+
+
+<!--  PAGE: HOME -->
+<div id="page-home" class="page-section active">
+
+    <!-- ── Hero ─────────────────────────────── -->
+    <section class="hero" aria-labelledby="heroHeading">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-noise" aria-hidden="true"></div>
+        <div class="hero-grid-lines" aria-hidden="true"></div>
+
+        <div class="container">
+            <!-- Text Content -->
+            <div class="hero-content">
+                <span class="hero-eyebrow">New Collection 2026</span>
+
+                <h1 class="hero-title" id="heroHeading">
+                    Where Luxury<br>
+                    Meets <em>Desire</em>
+                </h1>
+
+                <p class="hero-subtitle">
+                    Curated premium goods for those who refuse the ordinary.
+                    Each piece selected for its craftsmanship, form, and enduring character.
+                </p>
+
+                <div class="hero-cta-group">
+                    <a href="#" class="btn-primary" onclick="showPage('shop'); return false;">
+                        <i class="fas fa-bag-shopping"></i>
+                        Shop Collection
+                    </a>
+                    <a href="#" class="btn-ghost" onclick="showPage('about'); return false;">
+                        <i class="fas fa-arrow-right"></i>
+                        Our Story
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">2.4K+</div>
+                        <div class="stat-label">Products</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">98%</div>
+                        <div class="stat-label">Satisfied</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">150+</div>
+                        <div class="stat-label">Brands</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visual -->
+            <div class="hero-visual" aria-hidden="true">
+                <div class="hero-product-showcase">
+                    <div class="showcase-ring"></div>
+                    <div class="showcase-ring showcase-ring-2"></div>
+                    <div class="showcase-center">
+                        <span class="showcase-svg-icon">⌚</span>
+                    </div>
+                </div>
+
+                <!-- Floating Cards -->
+                <div class="hero-floating-card card-left">
+                    <div class="floating-icon"><i class="fas fa-star"></i></div>
+                    <div>
+                        <div class="floating-label">Rating</div>
+                        <div class="floating-value">4.9 / 5.0</div>
+                    </div>
+                </div>
+
+                <div class="hero-floating-card card-right">
+                    <div class="floating-icon"><i class="fas fa-shield-halved"></i></div>
+                    <div>
+                        <div class="floating-label">Warranty</div>
+                        <div class="floating-value">2 Year Cover</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Categories ────────────────────────── -->
+    <section class="categories-section" aria-labelledby="catHeading">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div>
+                    <span class="section-eyebrow">Browse By</span>
+                    <h2 class="section-title" id="catHeading">Shop <em>Categories</em></h2>
+                </div>
+                <a href="#" class="section-link" onclick="showPage('shop'); return false;">
+                    View All <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="categories-grid stagger" role="list">
+                <button class="category-card active fade-in" data-category="all"
+                    onclick="showPage('shop'); filterProducts('all')"
+                    role="listitem" aria-pressed="true">
+                    <div class="category-icon">🛍️</div>
+                    <span class="category-name">All Items</span>
+                    <span class="category-count">8 items</span>
+                </button>
+                <button class="category-card fade-in" data-category="watches"
+                    onclick="showPage('shop'); filterProducts('watches')"
+                    role="listitem" aria-pressed="false">
+                    <div class="category-icon">⌚</div>
+                    <span class="category-name">Watches</span>
+                    <span class="category-count">1 item</span>
+                </button>
+                <button class="category-card fade-in" data-category="apparel"
+                    onclick="showPage('shop'); filterProducts('apparel')"
+                    role="listitem" aria-pressed="false">
+                    <div class="category-icon">🧥</div>
+                    <span class="category-name">Apparel</span>
+                    <span class="category-count">2 items</span>
+                </button>
+                <button class="category-card fade-in" data-category="electronics"
+                    onclick="showPage('shop'); filterProducts('electronics')"
+                    role="listitem" aria-pressed="false">
+                    <div class="category-icon">🎧</div>
+                    <span class="category-name">Electronics</span>
+                    <span class="category-count">1 item</span>
+                </button>
+                <button class="category-card fade-in" data-category="accessories"
+                    onclick="showPage('shop'); filterProducts('accessories')"
+                    role="listitem" aria-pressed="false">
+                    <div class="category-icon">👛</div>
+                    <span class="category-name">Accessories</span>
+                    <span class="category-count">1 item</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Featured (React) ──────────────────── -->
+    <section style="padding:5rem 0; background:var(--bg-void);" aria-labelledby="featuredHeading">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div>
+                    <span class="section-eyebrow">Handpicked</span>
+                    <h2 class="section-title" id="featuredHeading">Featured <em>Pieces</em></h2>
+                </div>
+            </div>
+            <!-- React renders here -->
+            <div id="react-featured-root" class="fade-in"></div>
+        </div>
+    </section>
+
+    <!-- ── Promo Banner ───────────────────────── -->
+    <section class="promo-section" aria-label="Promotion">
+        <div class="promo-banner">
+            <div class="container">
+                <span class="promo-label">Limited Time Offer</span>
+                <h2 class="promo-title">20% Off<br><em>Everything Luxury</em></h2>
+                <p class="promo-desc">
+                    Use code at checkout. Applies to all full-price items.
+                    Offer valid while stocks last.
+                </p>
+                <div class="promo-code-box" role="group" aria-label="Promo code">
+                    <div>
+                        <div class="promo-code-label">Your code</div>
+                        <div class="promo-code">ADDN20</div>
+                    </div>
+                    <button class="copy-code-btn" onclick="copyPromoCode()" aria-label="Copy promo code">
+                        <i class="fas fa-copy"></i> Copy
+                    </button>
+                </div>
+                <a href="#" class="btn-primary" onclick="showPage('shop'); return false;">
+                    Shop Now <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Newsletter ────────────────────────── -->
+    <section class="newsletter-section" aria-labelledby="newsletterHeading">
+        <div class="container">
+            <div class="newsletter-inner">
+                <div class="newsletter-text fade-in">
+                    <span class="section-eyebrow">Stay in the Shadows</span>
+                    <h2 class="section-title" id="newsletterHeading">Join the<br><em>Inner Circle</em></h2>
+                    <p>Early access to new drops, exclusive offers, and stories from the Luxury side of design. No spam, ever.</p>
+                </div>
+                <div class="fade-in">
+                    <form class="newsletter-form" onsubmit="handleNewsletterSubmit(event)" novalidate aria-label="Newsletter signup">
+                        <div class="input-group">
+                            <input
+                                type="email"
+                                id="newsletterEmail"
+                                placeholder="your@email.com"
+                                aria-label="Email address"
+                                required
+                            >
+                            <button type="submit">Subscribe</button>
+                        </div>
+                        <div class="newsletter-trust">
+                            <span class="trust-item"><i class="fas fa-lock"></i> No spam</span>
+                            <span class="trust-item"><i class="fas fa-times-circle"></i> Unsubscribe anytime</span>
+                            <span class="trust-item"><i class="fas fa-shield-halved"></i> Privacy protected</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div><!-- /page-home -->
+
+
+<!-- PAGE: SHOP -->
+<div id="page-shop" class="page-section" style="padding-top: var(--nav-height)">
+
+    <section class="products-section" aria-labelledby="shopHeading">
+        <div class="container">
+
+            <!-- Header -->
+            <div class="section-header fade-in" style="padding-top:3rem">
+                <div>
+                    <span class="section-eyebrow">Collection</span>
+                    <h2 class="section-title" id="shopHeading">All <em>Products</em></h2>
+                </div>
+            </div>
+
+            <!-- Search & Toolbar -->
+            <div class="products-toolbar fade-in" role="toolbar" aria-label="Product filters">
+                <div class="toolbar-left">
+                    <span class="results-count" id="resultCount" aria-live="polite">Loading…</span>
+                </div>
+                <div class="toolbar-right">
+                    <!-- Inline search -->
+                    <div class="nav-search-bar" style="display:flex" role="search">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                        <input
+                            type="search"
+                            id="searchInput"
+                            placeholder="Search…"
+                            aria-label="Search products"
+                        >
+                    </div>
+
+                    <!-- Sort -->
+                    <select class="sort-select" id="sortSelect" aria-label="Sort products">
+                        <option value="default">Default</option>
+                        <option value="price-asc">Price: Low → High</option>
+                        <option value="price-desc">Price: High → Low</option>
+                        <option value="rating">Top Rated</option>
+                        <option value="popular">Most Popular</option>
+                    </select>
+
+                    <!-- View Toggle -->
+                    <div class="view-toggles" role="group" aria-label="View mode">
+                        <button class="view-btn active" onclick="toggleGridView(true)"  title="Grid view"  aria-label="Grid view"  aria-pressed="true">
+                            <i class="fas fa-grid-2"></i>
+                        </button>
+                        <button class="view-btn"        onclick="toggleGridView(false)" title="List view"  aria-label="List view"  aria-pressed="false">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category filter bar -->
+            <div style="display:flex;gap:0.6rem;flex-wrap:wrap;margin-bottom:2rem" role="group" aria-label="Filter by category">
+                <button class="btn-ghost" style="padding:0.5rem 1rem;font-size:0.75rem;" onclick="filterProducts('all')"         aria-pressed="true">All</button>
+                <button class="btn-ghost" style="padding:0.5rem 1rem;font-size:0.75rem;" onclick="filterProducts('watches')"      aria-pressed="false">Watches</button>
+                <button class="btn-ghost" style="padding:0.5rem 1rem;font-size:0.75rem;" onclick="filterProducts('apparel')"      aria-pressed="false">Apparel</button>
+                <button class="btn-ghost" style="padding:0.5rem 1rem;font-size:0.75rem;" onclick="filterProducts('electronics')"  aria-pressed="false">Electronics</button>
+                <button class="btn-ghost" style="padding:0.5rem 1rem;font-size:0.75rem;" onclick="filterProducts('home')"         aria-pressed="false">Home</button>
+                <button class="btn-ghost" style="padding:0.5rem 1rem;font-size:0.75rem;" onclick="filterProducts('accessories')"  aria-pressed="false">Accessories</button>
+                <button class="btn-ghost" style="padding:0.5rem 1rem;font-size:0.75rem;" onclick="filterProducts('lifestyle')"    aria-pressed="false">Lifestyle</button>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="products-grid stagger" id="productGrid" role="list" aria-label="Products">
+                <!-- Populated by scripts.js -->
+            </div>
+
+        </div>
+    </section>
+
+</div><!-- /page-shop -->
+
+
+<!--  PAGE: ABOUT -->
+<div id="page-about" class="page-section">
+
+    <div class="about-hero">
+        <div class="container">
+            <span class="section-eyebrow" style="display:block;margin-bottom:1rem">Our Story</span>
+            <h1 class="section-title">Crafted in Darkness,<br><em>Born for the Bold</em></h1>
+            <p style="margin-top:1.5rem">
+                ADDN was founded on a single principle: that beauty lives in restraint,
+                in shadow, in the deliberate rejection of noise. We source pieces that endure —
+                in quality, in form, in feeling.
+            </p>
+        </div>
+    </div>
+
+    <div class="about-values">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div>
+                    <span class="section-eyebrow">What We Stand For</span>
+                    <h2 class="section-title">Our <em>Values</em></h2>
+                </div>
+            </div>
+            <div class="values-grid stagger">
+                <div class="value-card fade-in">
+                    <span class="value-icon">✦</span>
+                    <h3>Uncompromising Quality</h3>
+                    <p>Every product passes through a rigorous curation process. We partner only with makers who share our obsession with materials, construction, and longevity.</p>
+                </div>
+                <div class="value-card fade-in">
+                    <span class="value-icon">◈</span>
+                    <h3>Radical Restraint</h3>
+                    <p>We believe in less but better. Our catalog is deliberately small — each item earns its place. No filler, no compromise, no noise.</p>
+                </div>
+                <div class="value-card fade-in">
+                    <span class="value-icon">⬡</span>
+                    <h3>Responsible Sourcing</h3>
+                    <p>From leather to electronics, we trace the origin of every product. We work with suppliers who treat people and materials with respect.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats row -->
+    <section style="padding:5rem 0; background:var(--bg-void);">
+        <div class="container">
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center" class="stagger">
+                <div class="fade-in" style="padding:2rem;background:var(--bg-surface);border:1px solid var(--border-subtle);border-radius:var(--radius-lg)">
+                    <div style="font-family:var(--font-display);font-size:3rem;font-weight:300;color:var(--accent-gold)">2019</div>
+                    <div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.3rem;text-transform:uppercase;letter-spacing:0.1em">Founded</div>
+                </div>
+                <div class="fade-in" style="padding:2rem;background:var(--bg-surface);border:1px solid var(--border-subtle);border-radius:var(--radius-lg)">
+                    <div style="font-family:var(--font-display);font-size:3rem;font-weight:300;color:var(--accent-gold)">48K+</div>
+                    <div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.3rem;text-transform:uppercase;letter-spacing:0.1em">Customers</div>
+                </div>
+                <div class="fade-in" style="padding:2rem;background:var(--bg-surface);border:1px solid var(--border-subtle);border-radius:var(--radius-lg)">
+                    <div style="font-family:var(--font-display);font-size:3rem;font-weight:300;color:var(--accent-gold)">98%</div>
+                    <div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.3rem;text-transform:uppercase;letter-spacing:0.1em">Satisfaction</div>
+                </div>
+                <div class="fade-in" style="padding:2rem;background:var(--bg-surface);border:1px solid var(--border-subtle);border-radius:var(--radius-lg)">
+                    <div style="font-family:var(--font-display);font-size:3rem;font-weight:300;color:var(--accent-gold)">60+</div>
+                    <div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.3rem;text-transform:uppercase;letter-spacing:0.1em">Countries</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter repeat -->
+    <section class="newsletter-section" aria-labelledby="aboutNewsletterHeading">
+        <div class="container">
+            <div class="newsletter-inner">
+                <div class="newsletter-text fade-in">
+                    <span class="section-eyebrow">Stay Connected</span>
+                    <h2 class="section-title" id="aboutNewsletterHeading">Follow the<br><em>Journey</em></h2>
+                    <p>Be the first to know about new arrivals, behind-the-scenes stories, and exclusive member access.</p>
+                </div>
+                <div class="fade-in">
+                    <form class="newsletter-form" onsubmit="handleNewsletterSubmit(event)" novalidate>
+                        <div class="input-group">
+                            <input type="email" id="newsletterEmail2" placeholder="your@email.com" aria-label="Email address" required>
+                            <button type="submit">Join</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div><!-- /page-about -->
+
+
+<!--  PAGE: CONTACT -->
+<div id="page-contact" class="page-section">
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="fade-in" style="padding-top:2rem">
+                <span class="section-eyebrow">Get in Touch</span>
+                <h1 class="section-title">We'd Love to<br><em>Hear From You</em></h1>
+                <p style="color:var(--text-secondary);margin-top:1rem;font-size:0.9rem;line-height:1.7;max-width:500px;font-weight:300">
+                    Questions about an order, a product, or just want to talk about luxury aesthetics?
+                    Our team responds within 24 hours.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Info -->
+                <div class="contact-info fade-in">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>hello@addnstore.co</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+1 (800) ADDN-000</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-location-dot"></i></div>
+                        <div>
+                            <h4>Studio</h4>
+                            <p>88 Akka St, Makkah, SA 10001</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                        <div>
+                            <h4>Hours</h4>
+                            <p>Sat – Fri, 9:00 AM – 11:00 PM </p>
+                        </div>
+                    </div>
+
+                    <!-- Social -->
+                    <div>
+                        <p style="font-size:0.72rem;color:var(--text-muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.8rem;font-family:var(--font-mono)">Follow Us</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+                            <a href="#" class="social-link" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                            <a href="#" class="social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <form class="contact-form fade-in" onsubmit="handleContactSubmit(event)" novalidate aria-label="Contact form">
+                    <div class="form-group">
+                        <label for="contactName">Full Name</label>
+                        <input type="text" id="contactName" class="form-control" placeholder="Your name" required aria-required="true">
+                        <span class="field-error" id="contactNameError" role="alert"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactEmail">Email Address</label>
+                        <input type="email" id="contactEmail" class="form-control" placeholder="your@email.com" required aria-required="true">
+                        <span class="field-error" id="contactEmailError" role="alert"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactSubject">Subject</label>
+                        <select id="contactSubject" class="form-control" aria-label="Message subject">
+                            <option value="">Select a topic…</option>
+                            <option>Order Inquiry</option>
+                            <option>Product Question</option>
+                            <option>Returns & Refunds</option>
+                            <option>Partnership</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactMessage">Message</label>
+                        <textarea id="contactMessage" class="form-control" placeholder="Tell us what's on your mind…" required aria-required="true"></textarea>
+                        <span class="field-error" id="contactMessageError" role="alert"></span>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width:100%;justify-content:center;border-radius:var(--radius-md)">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+</div><!-- /page-contact -->
+
+
+<!--  
+     CART SIDEBAR
+       -->
+<div class="cart-overlay" id="cartOverlay" role="dialog" aria-modal="true" aria-label="Shopping cart"></div>
+
+<aside class="cart-sidebar" id="cartSidebar" aria-label="Cart items">
+    <div class="cart-header">
+        <h2 class="cart-title">Your Cart</h2>
+        <button class="cart-close" id="cartClose" aria-label="Close cart">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <div class="cart-items" id="cartItems">
+        <div class="cart-empty">
+            <div class="cart-empty-icon">🛍️</div>
+            <p>Your cart is empty</p>
+        </div>
+    </div>
+
+    <div class="cart-footer">
+        <div class="cart-totals">
+            <div class="cart-row">
+                <span>Subtotal</span>
+                <span id="cartSubtotal">$0.00</span>
+            </div>
+            <div class="cart-row">
+                <span>Shipping</span>
+                <span id="cartShipping">$0.00</span>
+            </div>
+            <div class="cart-row total">
+                <span>Total</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+        </div>
+        <button class="checkout-btn" id="checkoutBtn">
+            <i class="fas fa-lock"></i>
+            Secure Checkout
+        </button>
+        <p style="font-size:0.68rem;color:var(--text-muted);text-align:center">
+            Free shipping on orders over $150
+        </p>
+    </div>
+</aside>
+
+
+<!--  
+     WISHLIST SIDEBAR
+       -->
+<div class="cart-overlay" id="wishlistOverlay" role="dialog" aria-modal="true" aria-label="Wishlist"></div>
+
+<aside class="cart-sidebar" id="wishlistSidebar" aria-label="Wishlist items">
+    <div class="cart-header">
+        <h2 class="cart-title">Wishlist <span id="wishlistCount" style="font-size:0.85rem;color:var(--accent-gold);font-family:var(--font-mono)"></span></h2>
+        <button class="cart-close" id="wishlistClose" aria-label="Close wishlist">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    <div class="cart-items" id="wishlistItems">
+        <div class="cart-empty">
+            <div class="cart-empty-icon">🤍</div>
+            <p>Your wishlist is empty</p>
+            <p style="font-size:0.75rem;margin-top:0.3rem">Click the ♡ on any product to save it here</p>
+        </div>
+    </div>
+    <div class="cart-footer" id="wishlistFooter" style="display:none">
+        <button class="checkout-btn" id="addAllToCartBtn">
+            <i class="fas fa-bag-shopping"></i>
+            Add All to Cart
+        </button>
+        <button class="btn-ghost" id="clearWishlistBtn" style="width:100%;justify-content:center;border-radius:var(--radius-md);margin-top:0.5rem">
+            <i class="fas fa-trash-alt"></i> Clear Wishlist
+        </button>
+    </div>
+</aside>
+
+
+<!--  
+     FOOTER
+       -->
+<footer role="contentinfo">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <span class="brand-name">ADDN</span>
+                <p>Curated luxury for those who live in the shadows of ordinary taste. Premium goods, delivered to your door.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" class="social-link" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                    <a href="#" class="social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Shop</h4>
+                <ul>
+                    <li><a href="#" onclick="showPage('shop'); filterProducts('all');       return false;">All Products</a></li>
+                    <li><a href="#" onclick="showPage('shop'); filterProducts('watches');    return false;">Watches</a></li>
+                    <li><a href="#" onclick="showPage('shop'); filterProducts('apparel');    return false;">Apparel</a></li>
+                    <li><a href="#" onclick="showPage('shop'); filterProducts('electronics');return false;">Electronics</a></li>
+                    <li><a href="#" onclick="showPage('shop'); filterProducts('home');       return false;">Home & Living</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#" onclick="showPage('about');   return false;">About Us</a></li>
+                    <li><a href="#" onclick="showPage('contact'); return false;">Contact</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press Kit</a></li>
+                    <li><a href="#">Affiliates</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Track Order</a></li>
+                    <li><a href="#">Size Guide</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="container" style="display:contents">
+            <p class="footer-copy">© 2026 ADDN Store. All rights reserved.</p>
+            <nav class="footer-legal" aria-label="Legal links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+            </nav>
+        </div>
+    </div>
+</footer>
+
+
+<!--  
+     UTILITIES
+       -->
+<!-- Toast -->
+<div id="toastContainer" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+<!-- Back to Top -->
+<button class="back-to-top" id="backToTop" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+</button>
+
+
+<!--  
+     SCRIPTS
+       -->
+<!-- React (Optional Component) -->
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<!-- Main Script -->
+<script src="scripts/scripts.js"></script>
+
+<!-- React Component (loaded after Babel) -->
+<script type="text/babel" src="react-components/FeaturedProducts.jsx"></script>
+
+</body>
+</html>
